@@ -33,13 +33,23 @@ nav a:hover {
   text-decoration: underline;
 }
 
+/* Make section take full width, container will limit content */
 .section {
   padding: 60px 20px;
-  max-width: 900px;
+  max-width: 100%; /* Changed from 900px */
   margin: auto;
   animation: fadeIn 1.5s ease;
 }
 
+/* Container to center and restrict max width */
+.container {
+  max-width: 900px;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 0 15px; /* small horizontal padding */
+}
+
+/* Home Section Styling */
 .home {
   background: linear-gradient(to right, #e0f7fa, #fff);
   text-align: center;
@@ -55,6 +65,7 @@ nav a:hover {
 
 .home-content .text {
   max-width: 500px;
+  text-align: left; /* optional, better reading on wide screens */
 }
 
 .home-content h1 span {
@@ -79,6 +90,7 @@ ul {
   padding-left: 20px;
 }
 
+/* Button styling */
 a.btn {
   display: inline-block;
   margin-top: 20px;
@@ -105,4 +117,17 @@ a.btn:hover {
 @keyframes slideUp {
   from { transform: translateY(20px); opacity: 0; }
   to { transform: translateY(0); opacity: 1; }
+}
+
+/* Responsive tweak: stack home content on small screens */
+@media (max-width: 600px) {
+  .home-content {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .home-content .text {
+    max-width: 100%;
+    text-align: center;
+  }
 }
