@@ -1,0 +1,662 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Naguleshwaran T - Portfolio</title>
+  <style>
+    /* Basic Reset */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    
+    body {
+      font-family: Arial, sans-serif;
+      line-height: 1.6;
+      color: #333;
+      background-color: #f9f9f9;
+    }
+    
+    /* Header Styles */
+    header {
+      background-color: #1a73e8;
+      color: white;
+      padding: 15px 0;
+      position: fixed;
+      width: 100%;
+      top: 0;
+      z-index: 1000;
+    }
+    
+    .container {
+      width: 90%;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    
+    .logo {
+      font-size: 1.5rem;
+      font-weight: bold;
+    }
+    
+    .nav-links {
+      display: flex;
+      list-style: none;
+    }
+    
+    .nav-links li {
+      margin-left: 20px;
+    }
+    
+    .nav-links a {
+      color: white;
+      text-decoration: none;
+      padding: 5px;
+    }
+    
+    .nav-links a:hover {
+      background-color: #0c5ad4;
+      border-radius: 3px;
+    }
+    
+    /* Section Styles */
+    section {
+      padding: 80px 0;
+    }
+    
+    .section-title {
+      text-align: center;
+      margin-bottom: 30px;
+      color: #1a73e8;
+    }
+    
+    .section-title h2 {
+      font-size: 2rem;
+      margin-bottom: 10px;
+    }
+    
+    /* Home Section */
+    #home {
+      padding-top: 100px;
+      text-align: center;
+      background-color: #e0f7fa;
+    }
+    
+    .home-content {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    
+    .home-image {
+      margin: 20px 0;
+    }
+    
+    .home-image img {
+      width: 200px;
+      height: 200px;
+      border-radius: 50%;
+      border: 5px solid #1a73e8;
+      object-fit: cover;
+    }
+    
+    .home-text h1 {
+      font-size: 2.2rem;
+      margin-bottom: 15px;
+      color: #1a73e8;
+    }
+    
+    .home-text p {
+      font-size: 1.2rem;
+      margin-bottom: 20px;
+      color: #555;
+    }
+    
+    .btn {
+      display: inline-block;
+      background-color: #1a73e8;
+      color: white;
+      padding: 12px 25px;
+      border-radius: 5px;
+      text-decoration: none;
+      margin: 20px 0;
+      font-weight: bold;
+    }
+    
+    .btn:hover {
+      background-color: #0c5ad4;
+    }
+    
+    .social-icons {
+      display: flex;
+      justify-content: center;
+      gap: 15px;
+      margin-top: 20px;
+    }
+    
+    .social-icons a {
+      display: inline-block;
+      width: 40px;
+      height: 40px;
+      background-color: #1a73e8;
+      color: white;
+      border-radius: 50%;
+      text-align: center;
+      line-height: 40px;
+    }
+    
+    .social-icons a:hover {
+      background-color: #0c5ad4;
+    }
+    
+    /* About Section */
+    .about-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      justify-content: center;
+    }
+    
+    .about-card {
+      background-color: white;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      padding: 20px;
+      width: 300px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+    
+    .about-card h3 {
+      color: #1a73e8;
+      margin-bottom: 15px;
+      border-bottom: 2px solid #1a73e8;
+      padding-bottom: 5px;
+    }
+    
+    .about-card p {
+      margin-bottom: 10px;
+    }
+    
+    /* Skills Section */
+    .skills-container {
+      background-color: white;
+      padding: 20px;
+      border-radius: 8px;
+      border: 1px solid #ddd;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+    
+    .skill-category {
+      margin-bottom: 30px;
+    }
+    
+    .skill-category h3 {
+      color: #1a73e8;
+      margin-bottom: 15px;
+      padding-bottom: 5px;
+      border-bottom: 2px solid #1a73e8;
+    }
+    
+    .skill-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 15px;
+    }
+    
+    .skill-item {
+      background-color: #e3f2fd;
+      padding: 10px 15px;
+      border-radius: 5px;
+      text-align: center;
+      min-width: 120px;
+    }
+    
+    /* Internship Section */
+    .internship-list {
+      background-color: white;
+      padding: 20px;
+      border-radius: 8px;
+      border: 1px solid #ddd;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+    
+    .internship-item {
+      margin-bottom: 30px;
+      padding-bottom: 20px;
+      border-bottom: 1px solid #eee;
+    }
+    
+    .internship-item:last-child {
+      border-bottom: none;
+      margin-bottom: 0;
+      padding-bottom: 0;
+    }
+    
+    .internship-item .date {
+      color: #ff6b6b;
+      font-weight: bold;
+      margin-bottom: 5px;
+    }
+    
+    /* Contact Section */
+    .contact-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
+    
+    .contact-info {
+      flex: 1;
+      min-width: 300px;
+    }
+    
+    .contact-form {
+      flex: 1;
+      min-width: 300px;
+    }
+    
+    .contact-card {
+      display: flex;
+      align-items: center;
+      margin-bottom: 15px;
+      padding: 15px;
+      background-color: #e3f2fd;
+      border-radius: 8px;
+    }
+    
+    .contact-card i {
+      font-size: 1.5rem;
+      color: #1a73e8;
+      margin-right: 15px;
+      width: 30px;
+    }
+    
+    .contact-card div h3 {
+      margin-bottom: 5px;
+      color: #1a73e8;
+    }
+    
+    .form-group {
+      margin-bottom: 15px;
+    }
+    
+    .form-group input,
+    .form-group textarea {
+      width: 100%;
+      padding: 10px;
+      border: 1px solid #ddd;
+      border-radius: 5px;
+    }
+    
+    .form-group textarea {
+      height: 120px;
+    }
+    
+    .declaration {
+      margin-top: 30px;
+      padding: 20px;
+      background-color: #e8f5e9;
+      border-left: 4px solid #4caf50;
+      border-radius: 0 8px 8px 0;
+    }
+    
+    .declaration h3 {
+      color: #4caf50;
+      margin-bottom: 10px;
+    }
+    
+    /* Footer */
+    footer {
+      background-color: #1a73e8;
+      color: white;
+      padding: 30px 0 20px;
+      text-align: center;
+    }
+    
+    .footer-content {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      margin-bottom: 20px;
+    }
+    
+    .footer-logo {
+      flex: 1;
+      min-width: 300px;
+      margin-bottom: 20px;
+    }
+    
+    .footer-links {
+      flex: 1;
+      min-width: 200px;
+      margin-bottom: 20px;
+    }
+    
+    .footer-links h3 {
+      margin-bottom: 15px;
+    }
+    
+    .footer-links ul {
+      list-style: none;
+    }
+    
+    .footer-links li {
+      margin-bottom: 8px;
+    }
+    
+    .footer-links a {
+      color: white;
+      text-decoration: none;
+    }
+    
+    .footer-links a:hover {
+      text-decoration: underline;
+    }
+    
+    .copyright {
+      padding-top: 20px;
+      border-top: 1px solid rgba(255,255,255,0.3);
+    }
+    
+    /* Responsive Design */
+    @media (max-width: 768px) {
+      .nav-links {
+        display: none;
+      }
+      
+      .nav-links.active {
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        top: 70px;
+        right: 0;
+        background-color: #1a73e8;
+        width: 100%;
+        padding: 20px;
+      }
+      
+      .nav-links.active li {
+        margin: 10px 0;
+      }
+      
+      .hamburger {
+        display: block;
+        font-size: 1.5rem;
+        cursor: pointer;
+      }
+      
+      .contact-grid {
+        flex-direction: column;
+      }
+    }
+    
+    @media (min-width: 769px) {
+      .hamburger {
+        display: none;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Header -->
+  <header>
+    <div class="container">
+      <nav>
+        <div class="logo">Na<span>gul</span></div>
+        <ul class="nav-links" id="navLinks">
+          <li><a href="#home">Home</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#skills">Skills</a></li>
+          <li><a href="#internship">Internship</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+        <div class="hamburger" id="hamburger">☰</div>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Home Section -->
+  <section id="home">
+    <div class="container">
+      <div class="home-content">
+        <div class="home-image">
+          <img src="nattu.jpg" alt="Naguleshwaran T">
+        </div>
+        <div class="home-text">
+          <h1>Hello, I'm Naguleshwaran T</h1>
+          <p>Web Developer | IT Student at VCET | Tech Explorer</p>
+          <a href="#contact" class="btn">Connect With Me</a>
+          <div class="social-icons">
+            <a href="mailto:naguleshwaran224@gmail.com"><span>✉️</span></a>
+            <a href="https://github.com/nagul200" target="_blank"><span>🐙</span></a>
+            <a href="https://www.linkedin.com/in/nagulesh-waran-t-011bb2286" target="_blank"><span>🔗</span></a>
+            <a href="tel:+919360559891"><span>📞</span></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- About Section -->
+  <section id="about">
+    <div class="container">
+      <div class="section-title">
+        <h2>About Me</h2>
+        <p>Get to know more about my background and education</p>
+      </div>
+      <div class="about-grid">
+        <div class="about-card">
+          <h3>Personal Info</h3>
+          <p><strong>Email:</strong> naguleshwaran224@gmail.com</p>
+          <p><strong>Phone:</strong> +91 9360559891</p>
+          <p><strong>Address:</strong> 3/10 Bagavathi Amman Kovil Street, Sholavandhan 625205</p>
+        </div>
+        <div class="about-card">
+          <h3>Education</h3>
+          <p><strong>Degree:</strong> B.Tech - Information Technology</p>
+          <p><strong>Year:</strong> 3rd Year</p>
+          <p><strong>College:</strong> Velammal College of Engineering and Technology, Madurai</p>
+        </div>
+        <div class="about-card">
+          <h3>Online Presence</h3>
+          <p><strong>GitHub:</strong> <a href="https://github.com/nagul200" target="_blank">github.com/nagul200</a></p>
+          <p><strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/nagulesh-waran-t-011bb2286" target="_blank">LinkedIn Profile</a></p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Skills Section -->
+  <section id="skills">
+    <div class="container">
+      <div class="section-title">
+        <h2>My Skills</h2>
+        <p>Technical expertise and personal strengths</p>
+      </div>
+      <div class="skills-container">
+        <div class="skill-category">
+          <h3>Technical Skills</h3>
+          <div class="skill-list">
+            <div class="skill-item">HTML5</div>
+            <div class="skill-item">CSS3</div>
+            <div class="skill-item">JavaScript</div>
+            <div class="skill-item">Python</div>
+            <div class="skill-item">C Programming</div>
+            <div class="skill-item">Java</div>
+          </div>
+        </div>
+        <div class="skill-category">
+          <h3>Soft Skills</h3>
+          <div class="skill-list">
+            <div class="skill-item">Quick Learner</div>
+            <div class="skill-item">Leadership</div>
+            <div class="skill-item">Time Management</div>
+            <div class="skill-item">Communication</div>
+            <div class="skill-item">Problem Solving</div>
+            <div class="skill-item">Teamwork</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Internship Section -->
+  <section id="internship">
+    <div class="container">
+      <div class="section-title">
+        <h2>Internship & Training</h2>
+        <p>My professional learning experiences</p>
+      </div>
+      <div class="internship-list">
+        <div class="internship-item">
+          <span class="date">2024 - Present</span>
+          <h3>Web Development Intern</h3>
+          <p>Dot Com Infoway Pvt Ltd</p>
+          <p>Working on modern web development projects using cutting-edge technologies and frameworks.</p>
+        </div>
+        <div class="internship-item">
+          <span class="date">2023 - 2024</span>
+          <h3>Frontend Development Training</h3>
+          <p>Online Course</p>
+          <p>Completed comprehensive training in HTML5, CSS3, JavaScript, and responsive web design.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact">
+    <div class="container">
+      <div class="section-title">
+        <h2>Contact Me</h2>
+        <p>Get in touch for opportunities and collaborations</p>
+      </div>
+      <div class="contact-grid">
+        <div class="contact-info">
+          <div class="contact-card">
+            <span>✉️</span>
+            <div>
+              <h3>Email</h3>
+              <p>naguleshwaran224@gmail.com</p>
+            </div>
+          </div>
+          <div class="contact-card">
+            <span>📞</span>
+            <div>
+              <h3>Phone</h3>
+              <p>+91 9360559891</p>
+            </div>
+          </div>
+          <div class="contact-card">
+            <span>📍</span>
+            <div>
+              <h3>Location</h3>
+              <p>3/10 Bagavathi Amman Kovil Street, Sholavandhan 625205</p>
+            </div>
+          </div>
+          <div class="contact-card">
+            <span>🗣️</span>
+            <div>
+              <h3>Languages</h3>
+              <p>English, Tamil</p>
+            </div>
+          </div>
+        </div>
+        <div class="contact-form">
+          <form>
+            <div class="form-group">
+              <input type="text" placeholder="Your Name" required>
+            </div>
+            <div class="form-group">
+              <input type="email" placeholder="Your Email" required>
+            </div>
+            <div class="form-group">
+              <textarea placeholder="Your Message" required></textarea>
+            </div>
+            <button type="submit" class="btn">Send Message</button>
+          </form>
+        </div>
+      </div>
+      <div class="declaration">
+        <h3>Declaration</h3>
+        <p>I hereby declare that the above information is true to the best of my knowledge.</p>
+        <p><strong>Place:</strong> Sholavandhan</p>
+        <p><strong>Date:</strong> 14/07/2025</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-logo">
+          <h2>Naguleshwaran T</h2>
+          <p>Web Developer | IT Student | Tech Explorer</p>
+          <div class="social-icons">
+            <a href="mailto:naguleshwaran224@gmail.com"><span>✉️</span></a>
+            <a href="https://github.com/nagul200" target="_blank"><span>🐙</span></a>
+            <a href="https://www.linkedin.com/in/nagulesh-waran-t-011bb2286" target="_blank"><span>🔗</span></a>
+          </div>
+        </div>
+        <div class="footer-links">
+          <h3>Quick Links</h3>
+          <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#internship">Internship</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+        </div>
+        <div class="footer-links">
+          <h3>Contact Info</h3>
+          <ul>
+            <li>✉️ naguleshwaran224@gmail.com</li>
+            <li>📞 +91 9360559891</li>
+            <li>📍 Sholavandhan, Tamil Nadu</li>
+          </ul>
+        </div>
+      </div>
+      <div class="copyright">
+        <p>&copy; 2025 Naguleshwaran T. All Rights Reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Mobile menu toggle
+    const hamburger = document.getElementById('hamburger');
+    const navLinks = document.getElementById('navLinks');
+    
+    hamburger.addEventListener('click', () => {
+      navLinks.classList.toggle('active');
+    });
+    
+    // Close mobile menu when clicking a link
+    document.querySelectorAll('.nav-links a').forEach(link => {
+      link.addEventListener('click', () => {
+        navLinks.classList.remove('active');
+      });
+    });
+    
+    // Form submission
+    const contactForm = document.querySelector('form');
+    if (contactForm) {
+      contactForm.addEventListener('submit', (e) => {
+        e.preventDefault();
+        alert('Thank you for your message! I will get back to you soon.');
+        contactForm.reset();
+      });
+    }
+  </script>
+</body>
+</html>
